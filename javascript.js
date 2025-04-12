@@ -1,3 +1,6 @@
+// Uses Math.random to randomise a number between 0 and 2, rounding to nearest whole number.
+// Assigns rock, paper or scissors to each of those numbers.
+// Sets computer choice as that random variable.
 function getComputerChoice() {
     const min = 0;
     const max = 2;
@@ -14,6 +17,8 @@ function getComputerChoice() {
     return computerChoice;
 }
 
+// Requests the user enter a variable corresponding to rock, paper or scissors.
+// Sets the user choice as the input variable.
 function getHumanChoice() {
     let humanChoiceIndex = parseInt(prompt("Please enter your choice; 0 for Rock, 1 for Paper, 2 for Scissors"));
     let humanChoice;
@@ -27,9 +32,12 @@ function getHumanChoice() {
     }    return humanChoice;
 }
 
+// Sets scoreboard to 0 for each player.
 let humanScore = 0;
 let computerScore = 0;
 
+// Takes the computer input and human input and compares the two
+// Announces winner based on game rules and increments relevant score by 1
 function playGame() {
     function playRound(humanChoice, computerChoice) {
         console.log(`Human: ${humanChoice}, Computer: ${computerChoice}`);
@@ -66,11 +74,14 @@ const computerSelection = getComputerChoice();
 
 console.log(playRound(humanSelection, computerSelection));
 
+// Prints scoreboard
 console.log(`Human: ${humanScore}, Computer: ${computerScore}`);
 }
 
+// Repeats game 5 times
 for (i = 0; i < 5; i++) {
     playGame();
 }
 
+// Prints scoreboard after the game has been played 5 times
 console.log(`Final score is Human: ${humanScore} vs Computer: ${computerScore}`);
